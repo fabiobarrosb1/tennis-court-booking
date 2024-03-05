@@ -1,17 +1,17 @@
-import { Inter } from "next/font/google";
-import "../styles/globals.css"
+import React, { ReactNode } from "react";
+import { AppProvider } from "@/components/Context/MyContext";
 import BookingSettings from "@/components/BookingSettings";
 import DateComponent from "@/components/DateComponent";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-row items-centers justify-between`}
+      className={`flex min-h-screen flex-row items-center justify-between p-10`}
     >
-      <BookingSettings/>
-      <DateComponent />
+      <AppProvider>
+        <BookingSettings />
+        <DateComponent />
+      </AppProvider>
     </main>
   );
 }

@@ -1,12 +1,12 @@
-import React from 'react';
-import { Calendar } from "@/components/ui/calendar"
+import React from "react";
+import { Calendar } from "@/components/ui/calendar";
 
 interface Props {
   onSelectDate: (date: Date | undefined) => void; // Callback function type
 }
 
 const CalendarSettings = (props: Props) => {
-  const [date, setDate] = React.useState<Date | undefined>(new Date())
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const handleDateSelect = (day: Date | undefined) => {
     console.log("Selected date:", day);
@@ -16,13 +16,12 @@ const CalendarSettings = (props: Props) => {
 
   return (
     <div>
-      <h1>Pick a date and time</h1>
       <Calendar
-    mode="single"
-    selected={date}
-    onSelect={handleDateSelect}
-    className="rounded-md border"
-  />
+        mode="single"
+        selected={date}
+        onSelect={handleDateSelect}
+        className="rounded-md border"
+      />
     </div>
   );
 };

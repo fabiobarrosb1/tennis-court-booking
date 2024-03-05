@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Check, ChevronsUpDown, ChevronDown } from "lucide-react"
+import * as React from "react";
+import { Check, ChevronsUpDown, ChevronDown } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 const locations = [
   {
@@ -39,11 +39,11 @@ const locations = [
     value: "singapore",
     label: "Singapore",
   },
-]
+];
 
 export function LocationCombobox() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -57,14 +57,16 @@ export function LocationCombobox() {
           {value
             ? locations.find((location) => location.value === value)?.label
             : "Select location..."}
-         <ChevronDown className={`ml-2 h-4 w-4 shrink-0 ${
+          <ChevronDown
+            className={`ml-2 h-4 w-4 shrink-0 ${
               open ? "rotate-180 transition-transform duration-200" : ""
-            }`} />
+            }`}
+          />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-[200px] p-0 bg-white">
         <Command>
-          <CommandInput placeholder="Search framework..." />
+          <CommandInput placeholder="Search location..." />
           <CommandEmpty>No location found.</CommandEmpty>
           <CommandGroup>
             {locations.map((location) => (
@@ -72,8 +74,8 @@ export function LocationCombobox() {
                 key={location.value}
                 value={location.value}
                 onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
-                  setOpen(false)
+                  setValue(currentValue === value ? "" : currentValue);
+                  setOpen(false);
                 }}
               >
                 <Check
@@ -89,5 +91,5 @@ export function LocationCombobox() {
         </Command>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
