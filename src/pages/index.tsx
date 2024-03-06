@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { AppProvider } from "@/components/Context/MyContext";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider/theme-provider";
 import BookingSettings from "@/components/Settings/BookingSettings";
 import DateComponent from "@/components/DateComponent";
 

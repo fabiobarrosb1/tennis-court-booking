@@ -4,7 +4,7 @@ import { DurationCombobox } from "../Combobox/DurationCombobox";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "../Context/MyContext";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
-import { ModeToggle } from "../Buttons/ToggleTheme";
+import { ModeToggle } from "../Toggle/ToggleTheme";
 
 interface Props {
   // Define your props here

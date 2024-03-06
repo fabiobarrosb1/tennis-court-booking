@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CalendarSettings from "./Settings/CalendarSettings";
 import HourSettings from "./Settings/HourSettings";
 import { useAppContext } from "./Context/MyContext";
-import { ModeToggle } from "./Buttons/ToggleTheme";
+import { ModeToggle } from "./Toggle/ToggleTheme";
 
 const DateComponent = () => {
   const { setDate } = useAppContext();
