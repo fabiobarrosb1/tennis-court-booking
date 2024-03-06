@@ -22,7 +22,8 @@ const config = {
         'xs': {'max': '480px'}, // Define a custom breakpoint for screens smaller than 425px
         'custom': {'max': '520px'},
         'xxs':{'max' : '400px'},
-        'xxxs':{'max' : '345px'}
+        'xxxs':{'max' : '345px'},
+        'custom2':{'max' : '460px'},
       },
       colors: {
         border: "hsl(var(--border))",

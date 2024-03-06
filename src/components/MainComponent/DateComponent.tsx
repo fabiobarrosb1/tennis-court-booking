@@ -12,9 +12,7 @@ const DateComponent = () => {
   };
 
   return (
-    <div
-      className={`flex w-fit mx-auto flex-col p-10 custom:p-5 date-component`}
-    >
+    <div className={`flex w-fit mx-auto flex-col p-10 date-component`}>
       <div className="flex m-2 justify-between">
         <h1 className="text-2xl font-bold">Pick a date and time</h1>
         <span className="hidden md:block">

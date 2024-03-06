@@ -1,19 +1,24 @@
 import React from "react";
 import { Calendar } from "@/components/ui/calendar";
 
-interface Props {
-  onSelectDate: (date: Date | undefined) => void; // Callback function type
-}
+type Props = {
+  onSelectDate: (day: Date | undefined) => void;
+  initialDate?: Date;
+};
 
-const CalendarSettings = (props: Props) => {
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
-  const minDate = new Date();
+const CalendarSettings: React.FC<Props> = ({ onSelectDate, initialDate }) => {
+  const [date, setDate] = React.useState<Date | undefined>(
+    initialDate || new Date()
+  );
 
-  const handleDateSelect = (day: Date | undefined) => {
-    console.log("Selected date:", day);
-    props.onSelectDate(day);
-    setDate(day);
-  };
+  const handleDateSelect = React.useCallback(
+    (day: Date | undefined) => {
+      console.log("Selected date:", day);
+      onSelectDate(day);
+      setDate(day);
+    },
+    [onSelectDate]
+  );
 
   return (
     <div>
@@ -23,10 +28,11 @@ const CalendarSettings = (props: Props) => {
         onSelect={handleDateSelect}
         className="rounded-md"
         showOutsideDays={false}
-        disabled={(day) => day < minDate}
       />
     </div>
   );
 };
 
-export default CalendarSettings;
+CalendarSettings.displayName = "CalendarSettings";
+
+export default React.memo(CalendarSettings);
