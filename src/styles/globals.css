@@ -144,7 +144,9 @@
   background-color: #6b7280; /* Adjust the color of the dot */
   border-radius: 50%;
 }
-
+.hour-time-disabled:hover {
+  cursor: not-allowed;
+}
 
 @media screen and (min-width:400px) and (max-width:520px) {
   .booking-settings {
