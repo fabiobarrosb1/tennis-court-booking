@@ -29,7 +29,7 @@ const HourSettings = () => {
       <div className={`flex flex-col gap-4`}>
         {hours.map((hourItem, index) => (
           <>
-            <div>
+            <div className="flex flex-row justify-between">
               <Button
                 className={`${
                   hour === hourItem ? "hour-selected-button" : "hour-button"
@@ -48,7 +48,7 @@ const HourSettings = () => {
                 {hourItem}pm
               </Button>
               {hour === hourItem && (
-                <button className="bg-cyan-400 px-3 py-3 rounded-md">
+                <button className="bg-cyan-400 px-3 py-3 rounded-md next-button">
                   Next
                 </button>
               )}
