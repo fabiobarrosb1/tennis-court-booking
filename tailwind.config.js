@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       screens: {
         'xs': {'max': '480px'}, // Define a custom breakpoint for screens smaller than 425px
+        'custom': {'max': '520px'},
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

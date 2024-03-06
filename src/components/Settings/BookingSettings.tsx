@@ -39,21 +39,22 @@ const BookingSettings = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-col gap-10 p-10 xs:p-5">
+    <div className="flex flex-col gap-10 p-10 xs:p-5 w-fit mx-auto">
       <div className="flex justify-between">
         <h1 className="text-3xl font-bold">Book a Court</h1>
         <span className="block md:hidden">
           <ModeToggle />
         </span>
       </div>
-
-      <div>
-        <p>Location</p>
-        <LocationCombobox />
-      </div>
-      <div>
-        <p>Duration</p>
-        <DurationCombobox />
+      <div className="flex flex-row gap-10 md:flex-col">
+        <div>
+          <p>Location</p>
+          <LocationCombobox />
+        </div>
+        <div>
+          <p>Duration</p>
+          <DurationCombobox />
+        </div>
       </div>
       <AddToCalendarButton
         name={`Tennis Court Reservation: ${upperCaseFirstLetter(location)}`}

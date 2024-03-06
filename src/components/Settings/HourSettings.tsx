@@ -31,7 +31,7 @@ const HourSettings = () => {
           <Button
             className={`${
               hour === hourItem ? "hour-selected-button" : "hour-button"
-            } px-20 py-6`}
+            } px-10 md:px-20 py-6`}
             key={index}
             variant="outline"
             onClick={() => {
