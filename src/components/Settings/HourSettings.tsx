@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { useAppContext } from "./Context/MyContext";
+import { useAppContext } from "../Context/MyContext";
 
-const hours = ["12:00pm", "12:30pm", "1:00pm", "1:30pm", "2:00pm", "2:30pm"];
+const hours = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30"];
 
 const HourSettings = () => {
   const { date, hour, setHour } = useAppContext();
@@ -37,7 +37,7 @@ const HourSettings = () => {
               setHour(hourItem);
             }}
           >
-            {hourItem}
+            {hourItem}pm
           </Button>
         ))}
       </div>

@@ -17,6 +17,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useAppContext } from "../Context/MyContext";
 
 const locations = [
   {
@@ -44,6 +45,7 @@ const locations = [
 export function LocationCombobox() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
+  const { setLocation } = useAppContext();
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -75,6 +77,7 @@ export function LocationCombobox() {
                 value={location.value}
                 onSelect={(currentValue) => {
                   setValue(currentValue === value ? "" : currentValue);
+                  setLocation(currentValue === value ? "" : currentValue);
                   setOpen(false);
                 }}
               >

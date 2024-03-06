@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CalendarSettings from "./CalendarSettings";
-import HourSettings from "./HourSettings";
+import CalendarSettings from "./Settings/CalendarSettings";
+import HourSettings from "./Settings/HourSettings";
 import { useAppContext } from "./Context/MyContext";
 
 const DateComponent = () => {

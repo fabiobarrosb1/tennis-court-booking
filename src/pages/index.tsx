@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { AppProvider } from "@/components/Context/MyContext";
-import BookingSettings from "@/components/BookingSettings";
+import BookingSettings from "@/components/Settings/BookingSettings";
 import DateComponent from "@/components/DateComponent";
 
 export default function Home() {

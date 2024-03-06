@@ -17,26 +17,27 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useAppContext } from "../Context/MyContext";
 
 const durations = [
   {
-    value: "15 min",
+    value: "15",
     label: "15 min",
   },
   {
-    value: "30 min",
+    value: "30",
     label: "30 min",
   },
   {
-    value: "45 min",
+    value: "45",
     label: "45 min",
   },
   {
-    value: "60 min",
+    value: "60",
     label: "60 min",
   },
   {
-    value: "120 min",
+    value: "120",
     label: "120 min",
   },
 ];
@@ -44,6 +45,7 @@ const durations = [
 export function DurationCombobox() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
+  const { setDuration } = useAppContext();
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -75,6 +77,9 @@ export function DurationCombobox() {
                 value={duration.value}
                 onSelect={(currentValue) => {
                   setValue(currentValue === value ? "" : currentValue);
+                  setDuration(
+                    currentValue === value ? 30 : parseInt(currentValue, 10)
+                  );
                   setOpen(false);
                 }}
               >
