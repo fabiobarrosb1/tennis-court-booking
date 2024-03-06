@@ -4,6 +4,7 @@ import { DurationCombobox } from "../Combobox/DurationCombobox";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "../Context/MyContext";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
+import { ModeToggle } from "../Buttons/ToggleTheme";
 
 interface Props {
   // Define your props here
@@ -38,8 +39,14 @@ const BookingSettings = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-col gap-10 p-10">
-      <h1 className="text-3xl font-bold">Book a Court</h1>
+    <div className="flex flex-col gap-10 p-10 xs:p-5">
+      <div className="flex justify-between">
+        <h1 className="text-3xl font-bold">Book a Court</h1>
+        <span className="block md:hidden">
+          <ModeToggle />
+        </span>
+      </div>
+
       <div>
         <p>Location</p>
         <LocationCombobox />
