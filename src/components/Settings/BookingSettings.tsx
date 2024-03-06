@@ -59,7 +59,7 @@ const BookingSettings = (props: Props) => {
         name={`Tennis Court Reservation: ${upperCaseFirstLetter(location)}`}
         startDate={date.toISOString().split("T")[0]}
         startTime={hour ? hour : "12:00"}
-        endTime={duration ? calculateEndHour(hour, duration) : "13:00"}
+        endTime={duration && hour ? calculateEndHour(hour, duration) : "13:00"}
         options="'Apple','Google','iCal','MicrosoftTeams'"
         timeZone="America/Los_Angeles"
         hideIconButton

@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { AppProvider } from "@/components/Context/MyContext";
 import { ThemeProvider } from "@/components/ThemeProvider/theme-provider";
 import BookingSettings from "@/components/Settings/BookingSettings";
-import DateComponent from "@/components/DateComponent";
+import DateComponent from "@/components/MainComponent/DateComponent";
 
 export default function Home() {
   return (
