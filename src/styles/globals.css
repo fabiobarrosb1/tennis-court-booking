@@ -106,3 +106,18 @@
 .\[\&\:has\(\[aria-selected\]\)\]\:bg-accent:has([aria-selected]) {
   background-color: transparent !important;
 }
+
+@media screen and (min-width:400px) and (max-width:520px) {
+  .booking-settings {
+    min-width: 400px;
+    padding: 2.5rem auto; 
+  }
+}
+
+@media screen and (max-width:400px) {
+  .booking-settings{
+    width: 100%;
+    padding: 2.5rem;
+  }
+  
+}
