@@ -10,6 +10,7 @@ export default function Home() {
     >
       <AppProvider>
         <BookingSettings />
+        <div className="h-full border-l border-gray-400 mx-4" />
         <DateComponent />
       </AppProvider>
     </main>

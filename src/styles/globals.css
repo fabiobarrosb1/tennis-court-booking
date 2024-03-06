@@ -75,6 +75,14 @@
   }
 } */
 
+.text-custom-gray {
+  color: rgb(152, 152, 152);
+}
+
+.text-custom-day-color {
+  color: rgb(97, 97, 97);
+}
+
 .aria-selected\:opacity-100[aria-selected="true"] {
   background-color: rgb(217, 224, 118);
   border-radius: 50%;
@@ -91,3 +99,4 @@
   color: rgb(217, 224, 118);
   border-color: rgb(217, 224, 118);
 }
+

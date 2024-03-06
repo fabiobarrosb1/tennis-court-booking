@@ -20,7 +20,8 @@ const CalendarSettings = (props: Props) => {
         mode="single"
         selected={date}
         onSelect={handleDateSelect}
-        className="rounded-md border"
+        className="rounded-md"
+        showOutsideDays={false}
       />
     </div>
   );

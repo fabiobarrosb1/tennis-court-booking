@@ -11,7 +11,7 @@ const DateComponent = () => {
   };
 
   return (
-    <div className={`flex flex-col w-full p-20`}>
+    <div className={`flex flex-col w-full p-10`}>
       <div className="flex m-2">
         <h1 className="text-2xl font-bold">Pick a date and time</h1>
       </div>

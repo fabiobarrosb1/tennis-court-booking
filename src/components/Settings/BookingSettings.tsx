@@ -38,7 +38,7 @@ const BookingSettings = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-col gap-10 p-20">
+    <div className="flex flex-col gap-10 p-10">
       <h1 className="text-3xl font-bold">Book a Court</h1>
       <div>
         <p>Location</p>

@@ -22,15 +22,16 @@ const HourSettings = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col h-full gap-6">
       {/* Display selectedDate */}
       <p>{formatDate(date)}</p>
+      {/* Div with hour buttons */}
       <div className={`flex flex-col gap-4`}>
         {hours.map((hourItem, index) => (
           <Button
             className={`${
               hour === hourItem ? "hour-selected-button" : "hour-button"
-            }`}
+            } px-20 py-6`}
             key={index}
             variant="outline"
             onClick={() => {

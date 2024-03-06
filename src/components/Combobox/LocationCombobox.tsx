@@ -54,7 +54,7 @@ export function LocationCombobox() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between text-left"
         >
           {value
             ? locations.find((location) => location.value === value)?.label
