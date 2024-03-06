@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Check, ChevronsUpDown, ChevronDown } from "lucide-react";
+import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -66,7 +67,7 @@ export function LocationCombobox() {
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 bg-white">
+      <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search location..." />
           <CommandEmpty>No location found.</CommandEmpty>
@@ -80,6 +81,7 @@ export function LocationCombobox() {
                   setLocation(currentValue === value ? "" : currentValue);
                   setOpen(false);
                 }}
+                className="custom-hover-bg"
               >
                 <Check
                   className={cn(

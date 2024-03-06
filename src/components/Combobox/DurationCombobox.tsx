@@ -66,13 +66,14 @@ export function DurationCombobox() {
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 bg-white">
+      <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search duration..." />
           <CommandEmpty>No duration found.</CommandEmpty>
           <CommandGroup>
             {durations.map((duration) => (
               <CommandItem
+                className="custom-hover-bg"
                 key={duration.value}
                 value={duration.value}
                 onSelect={(currentValue) => {
