@@ -171,3 +171,10 @@
   }
   
 }
+@media screen and (max-width:460px) {
+  .main {
+    padding: 0;
+    border: none;
+  }
+  
+}
