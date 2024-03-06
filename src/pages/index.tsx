@@ -6,9 +6,7 @@ import DateComponent from "@/components/DateComponent";
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-row items-top justify-between p-10`}
-    >
+    <main className={`flex min-h-screen flex-row items-top justify-between`}>
       <AppProvider>
         <ThemeProvider
           attribute="class"
@@ -17,7 +15,7 @@ export default function Home() {
           disableTransitionOnChange
         >
           <BookingSettings />
-          <div className="h-full border-l border-gray-400 mx-4" />
+          <div className="h-screen border-l border-gray-400 mx-4" />
           <DateComponent />
         </ThemeProvider>
       </AppProvider>
