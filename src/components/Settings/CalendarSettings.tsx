@@ -7,6 +7,7 @@ interface Props {
 
 const CalendarSettings = (props: Props) => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const minDate = new Date();
 
   const handleDateSelect = (day: Date | undefined) => {
     console.log("Selected date:", day);
@@ -22,6 +23,7 @@ const CalendarSettings = (props: Props) => {
         onSelect={handleDateSelect}
         className="rounded-md"
         showOutsideDays={false}
+        disabled={(day) => day < minDate}
       />
     </div>
   );

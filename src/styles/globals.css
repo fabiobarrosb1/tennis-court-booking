@@ -96,11 +96,13 @@
   background-color: #d9e076;
   border-color: rgb(217, 224, 118);
   color: white;
+  width: 50%;
 }
 
 .hour-button {
   color: rgb(217, 224, 118);
   border-color: rgb(217, 224, 118);
+  width: -webkit-fill-available;
 }
 
 .\[\&\:has\(\[aria-selected\]\)\]\:bg-accent:has([aria-selected]) {
@@ -115,6 +117,14 @@
   height: fit-content;
 }
 
+.booking-settings {
+  padding-right: 0;
+}
+
+.date-component {
+  padding-left: 0;
+}
+
 @media screen and (min-width:400px) and (max-width:520px) {
   .booking-settings {
     min-width: 400px;
@@ -126,6 +136,13 @@
   .booking-settings{
     width: 100%;
     padding: 2.5rem;
+  }
+  
+}
+@media screen and (max-width:1122px) {
+  .main {
+    margin: 2rem 2rem;
+  
   }
   
 }

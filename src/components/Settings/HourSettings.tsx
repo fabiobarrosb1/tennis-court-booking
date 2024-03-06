@@ -28,18 +28,32 @@ const HourSettings = () => {
       {/* Div with hour buttons */}
       <div className={`flex flex-col gap-4`}>
         {hours.map((hourItem, index) => (
-          <Button
-            className={`${
-              hour === hourItem ? "hour-selected-button" : "hour-button"
-            } px-10 md:px-20 py-6`}
-            key={index}
-            variant="outline"
-            onClick={() => {
-              setHour(hourItem);
-            }}
-          >
-            {hourItem}pm
-          </Button>
+          <>
+            <div>
+              <Button
+                className={`${
+                  hour === hourItem ? "hour-selected-button" : "hour-button"
+                } py-6`}
+                key={index}
+                variant="outline"
+                onClick={() => {
+                  setHour(hourItem);
+                  if (hour === hourItem) {
+                    setHour("");
+                  } else {
+                    setHour(hourItem);
+                  }
+                }}
+              >
+                {hourItem}pm
+              </Button>
+              {hour === hourItem && (
+                <button className="bg-cyan-400 px-3 py-3 rounded-md">
+                  Next
+                </button>
+              )}
+            </div>
+          </>
         ))}
       </div>
     </div>
