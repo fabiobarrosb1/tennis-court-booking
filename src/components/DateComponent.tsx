@@ -12,12 +12,12 @@ const DateComponent = () => {
   };
 
   return (
-    <div className={`flex flex-col w-full p-10`}>
+    <div className={`flex flex-col p-10`}>
       <div className="flex m-2 justify-between">
         <h1 className="text-2xl font-bold">Pick a date and time</h1>
         <ModeToggle />
       </div>
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between w-full gap-10">
         <CalendarSettings onSelectDate={handleDateSelect} />
         <HourSettings />
       </div>

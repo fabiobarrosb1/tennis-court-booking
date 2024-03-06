@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 type AppContextType = {
   date: Date;
   hour: string;
-  duration: number; // New variable for duration
+  duration?: number; // New variable for duration
   location: string; // New variable for location
   setDate: (date: Date) => void;
   setHour: (hour: string) => void;
@@ -21,8 +21,8 @@ const initialDate = new Date(); // Default to today's date
 const initialContext: AppContextType = {
   date: initialDate,
   hour: "",
-  duration: 30, // Default duration
-  location: "Portugal", // Default location
+  duration: undefined, // Default duration
+  location: "", // Default location
   setDate: () => {},
   setHour: () => {},
   setDuration: () => {},
@@ -35,8 +35,8 @@ const AppContext = createContext<AppContextType>(initialContext);
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [date, setDate] = useState<Date>(initialDate);
   const [hour, setHour] = useState<string>("");
-  const [duration, setDuration] = useState<number>(30); // Default duration
-  const [location, setLocation] = useState<string>("Portugal"); // Default location
+  const [duration, setDuration] = useState<number>(); // Default duration
+  const [location, setLocation] = useState<string>(""); // Default location
 
   return (
     <AppContext.Provider
