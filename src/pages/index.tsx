@@ -6,7 +6,7 @@ import DateComponent from "@/components/DateComponent";
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-row items-center justify-between p-10`}
+      className={`flex min-h-screen flex-row items-top justify-between p-10`}
     >
       <AppProvider>
         <BookingSettings />
