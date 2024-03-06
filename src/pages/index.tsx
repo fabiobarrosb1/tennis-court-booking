@@ -6,9 +6,7 @@ import DateComponent from "@/components/MainComponent/DateComponent";
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-top justify-center md:flex-row`}
-    >
+    <main className="main">
       <AppProvider>
         <ThemeProvider
           attribute="class"
@@ -16,9 +14,13 @@ export default function Home() {
           enableSystem
           disableTransitionOnChange
         >
-          <BookingSettings />
-          <div className=" border-l border-gray-300 mx-4" />
-          <DateComponent />
+          <div
+            className={`flex height-fit flex-col items-top justify-center md:flex-row`}
+          >
+            <BookingSettings />
+            <div className=" border-l border-gray-300 mx-4" />
+            <DateComponent />
+          </div>
         </ThemeProvider>
       </AppProvider>
     </main>
