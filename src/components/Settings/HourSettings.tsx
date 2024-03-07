@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppContext } from "../Context/MyContext";
 import { Button } from "@/components/ui/button";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
@@ -6,6 +6,7 @@ import { AddToCalendarButton } from "add-to-calendar-button-react";
 const hours = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30"];
 
 const HourSettings = () => {
+  const [isAddToCalendar, setIsAddToCalendar] = useState<boolean>(false);
   const { date, hour, setHour, duration, location } = useAppContext();
 
   // Format the date to display
@@ -56,55 +57,59 @@ const HourSettings = () => {
         {hours.map((hourItem, index) => (
           <>
             <div className="flex flex-row justify-between">
-              <Button
-                disabled={!location || !duration}
-                className={`${
-                  hour === hourItem ? "hour-selected-button" : "hour-button"
-                } py-6 ${
-                  !location || !duration ? "hour-time-disabled" : "hour-time"
-                }`}
-                key={index}
-                variant="outline"
-                onClick={() => {
-                  setHour(hourItem);
-                  if (hour === hourItem) {
-                    setHour("");
-                  } else {
+              {
+                <Button
+                  disabled={!location || !duration}
+                  className={`${
+                    hour === hourItem ? "hour-selected-button" : "hour-button"
+                  } py-6 ${
+                    !location || !duration ? "hour-time-disabled" : "hour-time"
+                  }`}
+                  key={index}
+                  variant="outline"
+                  onClick={() => {
                     setHour(hourItem);
-                  }
-                }}
-              >
-                {hourItem}pm
-              </Button>
+                    if (hour === hourItem) {
+                      setHour("");
+                    } else {
+                      setHour(hourItem);
+                    }
+                  }}
+                >
+                  {hourItem}pm
+                </Button>
+              }
               {hour === hourItem && (
                 <>
-                  {/* <button className="bg-cyan-400 px-1 text-xs py-1 rounded-md next-button">
-                    Add to calendar
-                  </button> */}
-                  <AddToCalendarButton
-                    name={`Tennis Court Reservation: ${upperCaseFirstLetter(
-                      location
-                    )}`}
-                    startDate={date.toISOString().split("T")[0]}
-                    startTime={hour ? hour : "12:00"}
-                    endTime={
-                      duration && hour
-                        ? calculateEndHour(hour, duration)
-                        : "13:00"
-                    }
-                    options="'Apple','Google','iCal','MicrosoftTeams'"
-                    timeZone="America/Los_Angeles"
-                    label="Next"
-                    hideIconButton
-                    hideBackground
-                    hideCheckmark
-                    disabled={!location || !duration || !hour || !date}
-                  />
+                  <button
+                    className="bg-cyan-400 px-1 py-1 rounded-md next-button"
+                    onClick={() => setIsAddToCalendar(true)}
+                  >
+                    Next
+                  </button>
                 </>
               )}
             </div>
           </>
         ))}
+
+        <AddToCalendarButton
+          name={`Tennis Court Reservation: ${upperCaseFirstLetter(location)}`}
+          startDate={date.toISOString().split("T")[0]}
+          startTime={hour ? hour : "12:00"}
+          endTime={
+            duration && hour ? calculateEndHour(hour, duration) : "13:00"
+          }
+          options="'Apple','Google','iCal','MicrosoftTeams'"
+          timeZone="America/Los_Angeles"
+          label="Add to Calendar"
+          hideIconButton
+          hideBackground
+          hideCheckmark
+          disabled={
+            !location || !duration || !hour || !date || !isAddToCalendar
+          }
+        />
       </div>
     </div>
   );
