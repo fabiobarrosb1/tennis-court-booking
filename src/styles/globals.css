@@ -133,6 +133,7 @@
   background-color: #7DD3FC;
 }
 
+/* Add the dot to the current day */
 .today-day::after {
   content: "";
   position: absolute;
@@ -155,21 +156,8 @@
   min-width: none !important;
 }
 
-@media screen and (min-width:400px) and (max-width:520px) {
-  .booking-settings {
-    min-width: -webkit-fill-available;
-    max-width: 400px;
-    padding: 2.5rem auto; 
-  }
-}
 
-@media screen and (max-width:400px) {
-  .booking-settings{
-    width: 100%;
-    padding: 0;
-  }
-  
-}
+/* Media Queries */
 @media screen and (max-width:1122px) {
   .main {
     margin: 2rem 2rem;
@@ -205,6 +193,21 @@
   .main {
     padding: 0;
     border: none;
+  }
+  
+}
+@media screen and (min-width:400px) and (max-width:520px) {
+  .booking-settings {
+    min-width: -webkit-fill-available;
+    max-width: 400px;
+    padding: 2.5rem auto; 
+  }
+}
+
+@media screen and (max-width:400px) {
+  .booking-settings{
+    width: 100%;
+    padding: 0;
   }
   
 }

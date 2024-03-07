@@ -96,6 +96,7 @@ const HourSettings = () => {
 
         <AddToCalendarButton
           name={`Tennis Court Reservation: ${upperCaseFirstLetter(location)}`}
+          iCalFileName="Tennis Court Booking"
           startDate={date.toISOString().split("T")[0]}
           startTime={hour ? hour : "12:00"}
           endTime={

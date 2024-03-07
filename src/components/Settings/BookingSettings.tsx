@@ -1,7 +1,7 @@
 import React from "react";
 import { LocationCombobox } from "../Combobox/LocationCombobox";
 import { DurationCombobox } from "../Combobox/DurationCombobox";
-import { ModeToggle } from "../Toggle/ToggleTheme";
+import { ModeToggle } from "../ToggleTheme/ToggleTheme";
 
 const BookingSettings = () => {
   return (
