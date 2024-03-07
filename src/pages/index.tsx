@@ -6,7 +6,7 @@ import DateComponent from "@/components/MainComponent/DateComponent";
 
 export default function Home() {
   return (
-    <main className="main">
+    <main className="main xxs:mx-4">
       <AppProvider>
         <ThemeProvider
           attribute="class"

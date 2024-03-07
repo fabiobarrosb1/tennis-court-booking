@@ -141,7 +141,7 @@
   transform: translateX(-50%);
   width: 5px; /* Adjust the size of the dot */
   height: 5px; /* Adjust the size of the dot */
-  background-color: #6b7280; /* Adjust the color of the dot */
+  background-color: rgb(217, 224, 118); /* Adjust the color of the dot */
   border-radius: 50%;
 }
 .hour-time-disabled:hover {
