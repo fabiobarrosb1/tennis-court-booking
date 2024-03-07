@@ -1,16 +1,9 @@
 import React from "react";
 import { LocationCombobox } from "../Combobox/LocationCombobox";
 import { DurationCombobox } from "../Combobox/DurationCombobox";
-import { useAppContext } from "../Context/MyContext";
 import { ModeToggle } from "../Toggle/ToggleTheme";
 
-interface Props {
-  // Define your props here
-}
-
-const BookingSettings = (props: Props) => {
-  const { date, hour, duration, location } = useAppContext();
-
+const BookingSettings = () => {
   return (
     <div className="flex flex-col gap-10 p-10 w-fit mx-auto booking-settings">
       <div className="flex justify-between">
