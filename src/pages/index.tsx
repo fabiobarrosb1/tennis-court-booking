@@ -3,6 +3,7 @@ import { AppProvider } from "@/components/Context/MyContext";
 import { ThemeProvider } from "@/components/ThemeProvider/theme-provider";
 import BookingSettings from "@/components/Settings/BookingSettings";
 import DateComponent from "@/components/MainComponent/DateComponent";
+import { PaymentMethod } from "@/components/PaymentComponent/PaymentMethod";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
             <div className=" border-l border-gray-300 mx-4" />
             <DateComponent />
           </div>
+
+          {/* <PaymentMethod /> */}
         </ThemeProvider>
       </AppProvider>
     </main>

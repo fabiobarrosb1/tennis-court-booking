@@ -10,6 +10,7 @@ const CalendarSettings: React.FC<Props> = ({ onSelectDate, initialDate }) => {
   const [date, setDate] = React.useState<Date | undefined>(
     initialDate || new Date()
   );
+  const today = new Date();
 
   const handleDateSelect = React.useCallback(
     (day: Date | undefined) => {
@@ -20,6 +21,10 @@ const CalendarSettings: React.FC<Props> = ({ onSelectDate, initialDate }) => {
     [onSelectDate]
   );
 
+  const disabledDays = {
+    before: today,
+  };
+
   return (
     <div>
       <Calendar
@@ -27,7 +32,7 @@ const CalendarSettings: React.FC<Props> = ({ onSelectDate, initialDate }) => {
         selected={date}
         onSelect={handleDateSelect}
         className="rounded-md"
-        showOutsideDays={false}
+        disabled={(day) => day < new Date()}
       />
     </div>
   );

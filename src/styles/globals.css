@@ -127,10 +127,10 @@
 
 .next-button {
   width: 48%;
+  color: white;
 }
 .next-button:hover {
   background-color: #7DD3FC;
-  color: black;
 }
 
 .today-day::after {
@@ -146,6 +146,13 @@
 }
 .hour-time-disabled:hover {
   cursor: not-allowed;
+}
+
+.atcb-button:not(.atcb-no-text,.atcb-modal-style,.atcb-dropoverlay,.atcb-single) {
+  min-width: none !important;
+}
+.atcb-button {
+  min-width: none !important;
 }
 
 @media screen and (min-width:400px) and (max-width:520px) {

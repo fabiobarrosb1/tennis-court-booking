@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAppContext } from "../Context/MyContext";
 import { Button } from "@/components/ui/button";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
+import "@/styles/globals.css";
 
 const hours = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30"];
 
@@ -49,7 +50,7 @@ const HourSettings = () => {
   };
 
   return (
-    <div className="flex flex-col h-full gap-6 min-w-40">
+    <div className="flex flex-col h-full gap-4 min-w-40 pt-4">
       {/* Display selectedDate */}
       <p>{formatDate(date)}</p>
       {/* Div with hour buttons */}
@@ -103,7 +104,6 @@ const HourSettings = () => {
           options="'Apple','Google','iCal','MicrosoftTeams'"
           timeZone="America/Los_Angeles"
           label="Add to Calendar"
-          hideIconButton
           hideBackground
           hideCheckmark
           disabled={
